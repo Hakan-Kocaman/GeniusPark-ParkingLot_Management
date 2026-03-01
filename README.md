@@ -6,6 +6,9 @@ The program simulates a real-world parkinglot attendant workflow with licence pl
 Made on simple user interface for ease of use.
 Developed with C#, Python and different ml models.
 ---
+![C#](https://img.shields.io/badge/C%23-.NET-green)
+![Python](https://img.shields.io/badge/Python-FastAPI-blue)
+---
 ## Author: Hakan Kocaman  ! Currently Working On ! 
 ---
 
@@ -39,6 +42,10 @@ Developed with C#, Python and different ml models.
  - If It Been Inside Database Updates Exit Date And Calculates Price
  - Else Insert New Bill Into Database
  - Display Bills In The Stack Panel (Active/non-Active)
+
+
+![C#](https://img.shields.io/badge/C%23-.NET-green)
+![Python](https://img.shields.io/badge/Python-FastAPI-blue)
 
 
  
