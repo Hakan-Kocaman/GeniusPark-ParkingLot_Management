@@ -7,16 +7,28 @@
       "RelativeMoniker": "D:0:0:{95302DB2-5CD6-4EAE-93CB-4BDFC36E8ED3}|ParkingLot.WPF\\ParkingLot.WPF.csproj|solutionrelative:parkinglot.wpf\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{92E86BB3-932F-4BE1-A527-AE18E2FEDB77}|ParkingLot.ML\\ParkingLot.ML.pyproj|C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.ML\\API.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{92E86BB3-932F-4BE1-A527-AE18E2FEDB77}|ParkingLot.ML\\ParkingLot.ML.pyproj|solutionrelative:ParkingLot.ML\\API.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{BE2405DE-69CB-4862-AB13-9A22C7120373}|ParkingLot.Core\\ParkingLot.Core.csproj|c:\\users\\hakan\\source\\repos\\parkinglot_management\\parkinglot.core\\preloadresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE2405DE-69CB-4862-AB13-9A22C7120373}|ParkingLot.Core\\ParkingLot.Core.csproj|solutionrelative:parkinglot.core\\preloadresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2420CAAB-23FA-48D7-95D8-E7D899C740D6}|ParkingLot.API\\ParkingLot.API.csproj|c:\\users\\hakan\\source\\repos\\parkinglot_management\\parkinglot.api\\services\\plateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2420CAAB-23FA-48D7-95D8-E7D899C740D6}|ParkingLot.API\\ParkingLot.API.csproj|solutionrelative:parkinglot.api\\services\\plateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2420CAAB-23FA-48D7-95D8-E7D899C740D6}|ParkingLot.API\\ParkingLot.API.csproj|c:\\users\\hakan\\source\\repos\\parkinglot_management\\parkinglot.api\\controllers\\preloadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2420CAAB-23FA-48D7-95D8-E7D899C740D6}|ParkingLot.API\\ParkingLot.API.csproj|solutionrelative:parkinglot.api\\controllers\\preloadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2420CAAB-23FA-48D7-95D8-E7D899C740D6}|ParkingLot.API\\ParkingLot.API.csproj|c:\\users\\hakan\\source\\repos\\parkinglot_management\\parkinglot.api\\controllers\\platecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2420CAAB-23FA-48D7-95D8-E7D899C740D6}|ParkingLot.API\\ParkingLot.API.csproj|solutionrelative:parkinglot.api\\controllers\\platecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2420CAAB-23FA-48D7-95D8-E7D899C740D6}|ParkingLot.API\\ParkingLot.API.csproj|c:\\users\\hakan\\source\\repos\\parkinglot_management\\parkinglot.api\\services\\preloadservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2420CAAB-23FA-48D7-95D8-E7D899C740D6}|ParkingLot.API\\ParkingLot.API.csproj|solutionrelative:parkinglot.api\\services\\preloadservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2420CAAB-23FA-48D7-95D8-E7D899C740D6}|ParkingLot.API\\ParkingLot.API.csproj|c:\\users\\hakan\\source\\repos\\parkinglot_management\\parkinglot.api\\controllers\\postbillcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2420CAAB-23FA-48D7-95D8-E7D899C740D6}|ParkingLot.API\\ParkingLot.API.csproj|solutionrelative:parkinglot.api\\controllers\\postbillcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2420CAAB-23FA-48D7-95D8-E7D899C740D6}|ParkingLot.API\\ParkingLot.API.csproj|c:\\users\\hakan\\source\\repos\\parkinglot_management\\parkinglot.api\\services\\postbillservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2420CAAB-23FA-48D7-95D8-E7D899C740D6}|ParkingLot.API\\ParkingLot.API.csproj|solutionrelative:parkinglot.api\\services\\postbillservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BB52D9F-0548-4043-BEF1-C662EFB64CC8}|ParkingLot.Data\\ParkingLot.Data.csproj|c:\\users\\hakan\\source\\repos\\parkinglot_management\\parkinglot.data\\bill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BB52D9F-0548-4043-BEF1-C662EFB64CC8}|ParkingLot.Data\\ParkingLot.Data.csproj|solutionrelative:parkinglot.data\\bill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,52 +58,88 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PreloadResponse.cs",
+              "DocumentMoniker": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.Core\\PreloadResponse.cs",
+              "RelativeDocumentMoniker": "ParkingLot.Core\\PreloadResponse.cs",
+              "ToolTip": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.Core\\PreloadResponse.cs",
+              "RelativeToolTip": "ParkingLot.Core\\PreloadResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T02:26:01.485Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PostBillService.cs",
+              "DocumentMoniker": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.API\\Services\\PostBillService.cs",
+              "RelativeDocumentMoniker": "ParkingLot.API\\Services\\PostBillService.cs",
+              "ToolTip": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.API\\Services\\PostBillService.cs",
+              "RelativeToolTip": "ParkingLot.API\\Services\\PostBillService.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwCUAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T21:24:46.146Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PostBillController.cs",
+              "DocumentMoniker": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.API\\Controllers\\PostBillController.cs",
+              "RelativeDocumentMoniker": "ParkingLot.API\\Controllers\\PostBillController.cs",
+              "ToolTip": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.API\\Controllers\\PostBillController.cs",
+              "RelativeToolTip": "ParkingLot.API\\Controllers\\PostBillController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T21:18:30.223Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PreloadService.cs",
+              "DocumentMoniker": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.API\\Services\\PreloadService.cs",
+              "RelativeDocumentMoniker": "ParkingLot.API\\Services\\PreloadService.cs",
+              "ToolTip": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.API\\Services\\PreloadService.cs",
+              "RelativeToolTip": "ParkingLot.API\\Services\\PreloadService.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwB0AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T21:28:33.472Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PreloadController.cs",
+              "DocumentMoniker": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.API\\Controllers\\PreloadController.cs",
+              "RelativeDocumentMoniker": "ParkingLot.API\\Controllers\\PreloadController.cs",
+              "ToolTip": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.API\\Controllers\\PreloadController.cs",
+              "RelativeToolTip": "ParkingLot.API\\Controllers\\PreloadController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T21:20:10.573Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.WPF\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "ParkingLot.WPF\\MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.WPF\\MainWindow.xaml.cs",
               "RelativeToolTip": "ParkingLot.WPF\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAAwEMAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAKIAAAAAAAAAAAAIwMAAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-15T00:05:41.454Z",
+              "WhenOpened": "2026-02-28T21:30:25.982Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PlateController.cs",
-              "DocumentMoniker": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.API\\Controllers\\PlateController.cs",
-              "RelativeDocumentMoniker": "ParkingLot.API\\Controllers\\PlateController.cs",
-              "ToolTip": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.API\\Controllers\\PlateController.cs",
-              "RelativeToolTip": "ParkingLot.API\\Controllers\\PlateController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "Bill.cs",
+              "DocumentMoniker": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.Data\\Bill.cs",
+              "RelativeDocumentMoniker": "ParkingLot.Data\\Bill.cs",
+              "ToolTip": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.Data\\Bill.cs",
+              "RelativeToolTip": "ParkingLot.Data\\Bill.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-15T00:09:15.648Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PlateService.cs",
-              "DocumentMoniker": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.API\\Services\\PlateService.cs",
-              "RelativeDocumentMoniker": "ParkingLot.API\\Services\\PlateService.cs",
-              "ToolTip": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.API\\Services\\PlateService.cs",
-              "RelativeToolTip": "ParkingLot.API\\Services\\PlateService.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwCkAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-15T00:09:05.894Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "API.py",
-              "DocumentMoniker": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.ML\\API.py",
-              "RelativeDocumentMoniker": "ParkingLot.ML\\API.py",
-              "ToolTip": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.ML\\API.py",
-              "RelativeToolTip": "ParkingLot.ML\\API.py",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2026-02-15T00:29:55.758Z"
+              "WhenOpened": "2026-02-28T21:31:15.466Z"
             }
           ]
         }

@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ParkingLot.Core
+namespace ParkingLot.Data
 {
     public class Company
     {
-       public static int id { get;}
-       public static string name { get;}
+       public int Id { get; set; }
+       public string Name { get; set; }
 
     }
 }

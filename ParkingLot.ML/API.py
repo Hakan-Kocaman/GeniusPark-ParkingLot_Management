@@ -9,14 +9,15 @@ app = FastAPI()
 @app.post("/api/plate/detect")
 async def Detect(file: UploadFile = File(...)):
     try:
+        success, plate, threshold, error = await Predict(file)
 
-  
-
-        return {"plate": file.filename}
+        return {"success": success, "plate": plate, "confidence": threshold, "error": error}
     
     except Exception as e:
         print(f"Error: {str(e)}")
-        return JSONResponse(content={"py error": str(e)}, status_code=500)
+
+        return {"success": False, "plate": None, "confidence": None, "error": str(e)}
+        
 
 
 if __name__ == "__main__":

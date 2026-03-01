@@ -3,11 +3,11 @@ using System.Text.Json;
 
 namespace ParkingLot.API.Services
 {
-    public class PlateService
+    public class DetectPlateService
     {
         private readonly HttpClient _httpClient;
 
-        public PlateService(HttpClient httpClient)
+        public DetectPlateService(HttpClient httpClient)
         {
             _httpClient = httpClient;
         }
@@ -17,13 +17,13 @@ namespace ParkingLot.API.Services
             return true;
         }
 
-        public async Task<string> DetectPlate(IFormFile carImage) {
+        public async Task<PlateResponse> DetectPlate(IFormFile carImage) {
 
             using var content = new MultipartFormDataContent();
 
             using var stream = carImage.OpenReadStream();
 
-            var streamContent = new StreamContent(stream);
+            using var streamContent = new StreamContent(stream);
 
             content.Add(streamContent, "file", carImage.FileName);
 
@@ -34,11 +34,12 @@ namespace ParkingLot.API.Services
 
             response.EnsureSuccessStatusCode();
 
-            var json = await response.Content.ReadAsStringAsync();
+            var result = await response.Content.ReadFromJsonAsync<PlateResponse>();
 
-            var result = JsonSerializer.Deserialize<PlateResponse>(json);
+            if (result == null)
+                throw new Exception("Failed to deserialize ML response");
 
-            return result.plate;
+            return result;
         
         }
 

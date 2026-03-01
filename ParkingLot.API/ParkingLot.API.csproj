@@ -8,10 +8,12 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\ParkingLot.Core\ParkingLot.Core.csproj" />
+    <ProjectReference Include="..\ParkingLot.Data\ParkingLot.Data.csproj" />
   </ItemGroup>
 
 </Project>
