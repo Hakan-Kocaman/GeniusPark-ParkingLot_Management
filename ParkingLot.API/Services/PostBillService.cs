@@ -1,4 +1,4 @@
-﻿using ParkingLot.Data;
+using ParkingLot.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace ParkingLot.API.Services
@@ -17,7 +17,7 @@ namespace ParkingLot.API.Services
         }
         public async Task<Bill> PostBill(Bill bill)
         {
-            var bills = await _context.Bills.SingleOrDefaultAsync(b => b.LicensePlate == bill.LicensePlate);
+            var bills = await _context.Bills.SingleOrDefaultAsync(b => (b.LicensePlate == bill.LicensePlate)&&(b.endDate==null));
             if (bills == null)
             {
                 bill.EnterDate = DateTime.Now;
