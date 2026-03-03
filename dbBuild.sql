@@ -5,6 +5,13 @@ go
 use PARKINGLOTDB
 go
 
+create table Users(
+	Users_id int identity primary key,
+	Users_name varchar(20) unique not null,
+	Users_password varchar(20) not null,
+	Company_id int not null
+)
+
 create table Company(
   Company_id int identity primary key,
   Company_name varchar(30) unique not null
@@ -27,6 +34,7 @@ create table Bill(
 	Bill_price decimal(10,2) default 0,
 	Company_id int not null,
 	Pricing_id int,
+	Users_id int not null,
 )
 
 create table DayType(
@@ -44,6 +52,8 @@ DayType_id int not null,
 )
 
 
+alter table Users
+	add foreign key (Company_id) references Company(Company_id);
 
 alter table Pricing
 	add foreign key (DayType_id) references DayType(DayType_id);
@@ -54,6 +64,8 @@ alter table Bill
 	add foreign key (Company_id) references Company(Company_id);
 alter table Bill
 	add foreign key (Pricing_id) references Pricing(Pricing_id);
+alter table Bill
+	add foreign key (Users_id) references Users(Users_id);
 
 alter table DayType
 	add foreign key (Company_id) references Company(Company_id);
