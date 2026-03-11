@@ -7,11 +7,11 @@ namespace ParkingLot.API.Controllers
 {
     [Route("api/bill")]
     [ApiController]
-    public class PostBillController : ControllerBase
+    public class BillController : ControllerBase
     {
-        private readonly PostBillService _postBillService;
+        private readonly BillService _postBillService;
 
-        public PostBillController(PostBillService postBillService)
+        public BillController(BillService postBillService)
         {
             _postBillService = postBillService;
         }

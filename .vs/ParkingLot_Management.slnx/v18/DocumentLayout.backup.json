@@ -1,34 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\",
+  "WorkspaceRootPath": "C:\\Users\\Hakan\\source\\repos\\Hakan-Kocaman\\GeniusPark-ParkingLot_Management\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{95302DB2-5CD6-4EAE-93CB-4BDFC36E8ED3}|ParkingLot.WPF\\ParkingLot.WPF.csproj|c:\\users\\hakan\\source\\repos\\parkinglot_management\\parkinglot.wpf\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2420CAAB-23FA-48D7-95D8-E7D899C740D6}|ParkingLot.API\\ParkingLot.API.csproj|c:\\users\\hakan\\source\\repos\\hakan-kocaman\\geniuspark-parkinglot_management\\parkinglot.api\\services\\detectplateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2420CAAB-23FA-48D7-95D8-E7D899C740D6}|ParkingLot.API\\ParkingLot.API.csproj|solutionrelative:parkinglot.api\\services\\detectplateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2420CAAB-23FA-48D7-95D8-E7D899C740D6}|ParkingLot.API\\ParkingLot.API.csproj|c:\\users\\hakan\\source\\repos\\hakan-kocaman\\geniuspark-parkinglot_management\\parkinglot.api\\controllers\\detectplatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2420CAAB-23FA-48D7-95D8-E7D899C740D6}|ParkingLot.API\\ParkingLot.API.csproj|solutionrelative:parkinglot.api\\controllers\\detectplatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{95302DB2-5CD6-4EAE-93CB-4BDFC36E8ED3}|ParkingLot.WPF\\ParkingLot.WPF.csproj|c:\\users\\hakan\\source\\repos\\hakan-kocaman\\geniuspark-parkinglot_management\\parkinglot.wpf\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{95302DB2-5CD6-4EAE-93CB-4BDFC36E8ED3}|ParkingLot.WPF\\ParkingLot.WPF.csproj|solutionrelative:parkinglot.wpf\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BE2405DE-69CB-4862-AB13-9A22C7120373}|ParkingLot.Core\\ParkingLot.Core.csproj|c:\\users\\hakan\\source\\repos\\parkinglot_management\\parkinglot.core\\preloadresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BE2405DE-69CB-4862-AB13-9A22C7120373}|ParkingLot.Core\\ParkingLot.Core.csproj|solutionrelative:parkinglot.core\\preloadresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2420CAAB-23FA-48D7-95D8-E7D899C740D6}|ParkingLot.API\\ParkingLot.API.csproj|c:\\users\\hakan\\source\\repos\\parkinglot_management\\parkinglot.api\\controllers\\preloadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2420CAAB-23FA-48D7-95D8-E7D899C740D6}|ParkingLot.API\\ParkingLot.API.csproj|solutionrelative:parkinglot.api\\controllers\\preloadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2420CAAB-23FA-48D7-95D8-E7D899C740D6}|ParkingLot.API\\ParkingLot.API.csproj|c:\\users\\hakan\\source\\repos\\parkinglot_management\\parkinglot.api\\services\\preloadservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2420CAAB-23FA-48D7-95D8-E7D899C740D6}|ParkingLot.API\\ParkingLot.API.csproj|solutionrelative:parkinglot.api\\services\\preloadservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2420CAAB-23FA-48D7-95D8-E7D899C740D6}|ParkingLot.API\\ParkingLot.API.csproj|c:\\users\\hakan\\source\\repos\\parkinglot_management\\parkinglot.api\\controllers\\postbillcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2420CAAB-23FA-48D7-95D8-E7D899C740D6}|ParkingLot.API\\ParkingLot.API.csproj|solutionrelative:parkinglot.api\\controllers\\postbillcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2420CAAB-23FA-48D7-95D8-E7D899C740D6}|ParkingLot.API\\ParkingLot.API.csproj|c:\\users\\hakan\\source\\repos\\parkinglot_management\\parkinglot.api\\services\\postbillservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2420CAAB-23FA-48D7-95D8-E7D899C740D6}|ParkingLot.API\\ParkingLot.API.csproj|solutionrelative:parkinglot.api\\services\\postbillservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BB52D9F-0548-4043-BEF1-C662EFB64CC8}|ParkingLot.Data\\ParkingLot.Data.csproj|c:\\users\\hakan\\source\\repos\\parkinglot_management\\parkinglot.data\\bill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5BB52D9F-0548-4043-BEF1-C662EFB64CC8}|ParkingLot.Data\\ParkingLot.Data.csproj|solutionrelative:parkinglot.data\\bill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,15 +22,11 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Bookmark",
@@ -57,89 +37,45 @@
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PreloadResponse.cs",
-              "DocumentMoniker": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.Core\\PreloadResponse.cs",
-              "RelativeDocumentMoniker": "ParkingLot.Core\\PreloadResponse.cs",
-              "ToolTip": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.Core\\PreloadResponse.cs",
-              "RelativeToolTip": "ParkingLot.Core\\PreloadResponse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-01T02:26:01.485Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "PostBillService.cs",
-              "DocumentMoniker": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.API\\Services\\PostBillService.cs",
-              "RelativeDocumentMoniker": "ParkingLot.API\\Services\\PostBillService.cs",
-              "ToolTip": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.API\\Services\\PostBillService.cs",
-              "RelativeToolTip": "ParkingLot.API\\Services\\PostBillService.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAQwCUAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-28T21:24:46.146Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PostBillController.cs",
-              "DocumentMoniker": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.API\\Controllers\\PostBillController.cs",
-              "RelativeDocumentMoniker": "ParkingLot.API\\Controllers\\PostBillController.cs",
-              "ToolTip": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.API\\Controllers\\PostBillController.cs",
-              "RelativeToolTip": "ParkingLot.API\\Controllers\\PostBillController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-28T21:18:30.223Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PreloadService.cs",
-              "DocumentMoniker": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.API\\Services\\PreloadService.cs",
-              "RelativeDocumentMoniker": "ParkingLot.API\\Services\\PreloadService.cs",
-              "ToolTip": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.API\\Services\\PreloadService.cs",
-              "RelativeToolTip": "ParkingLot.API\\Services\\PreloadService.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwB0AAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-28T21:28:33.472Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PreloadController.cs",
-              "DocumentMoniker": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.API\\Controllers\\PreloadController.cs",
-              "RelativeDocumentMoniker": "ParkingLot.API\\Controllers\\PreloadController.cs",
-              "ToolTip": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.API\\Controllers\\PreloadController.cs",
-              "RelativeToolTip": "ParkingLot.API\\Controllers\\PreloadController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-28T21:20:10.573Z"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.WPF\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "ParkingLot.WPF\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.WPF\\MainWindow.xaml.cs",
-              "RelativeToolTip": "ParkingLot.WPF\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAKIAAAAAAAAAAAAIwMAAAAANAAAAAAAAAA==",
+              "Title": "DetectPlateService.cs",
+              "DocumentMoniker": "C:\\Users\\Hakan\\source\\repos\\Hakan-Kocaman\\GeniusPark-ParkingLot_Management\\ParkingLot.API\\Services\\DetectPlateService.cs",
+              "RelativeDocumentMoniker": "ParkingLot.API\\Services\\DetectPlateService.cs",
+              "ToolTip": "C:\\Users\\Hakan\\source\\repos\\Hakan-Kocaman\\GeniusPark-ParkingLot_Management\\ParkingLot.API\\Services\\DetectPlateService.cs",
+              "RelativeToolTip": "ParkingLot.API\\Services\\DetectPlateService.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAB4AAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-28T21:30:25.982Z",
+              "WhenOpened": "2026-03-11T11:12:34.436Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Bill.cs",
-              "DocumentMoniker": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.Data\\Bill.cs",
-              "RelativeDocumentMoniker": "ParkingLot.Data\\Bill.cs",
-              "ToolTip": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.Data\\Bill.cs",
-              "RelativeToolTip": "ParkingLot.Data\\Bill.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAqAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "DetectPlateController.cs",
+              "DocumentMoniker": "C:\\Users\\Hakan\\source\\repos\\Hakan-Kocaman\\GeniusPark-ParkingLot_Management\\ParkingLot.API\\Controllers\\DetectPlateController.cs",
+              "RelativeDocumentMoniker": "ParkingLot.API\\Controllers\\DetectPlateController.cs",
+              "ToolTip": "C:\\Users\\Hakan\\source\\repos\\Hakan-Kocaman\\GeniusPark-ParkingLot_Management\\ParkingLot.API\\Controllers\\DetectPlateController.cs",
+              "RelativeToolTip": "ParkingLot.API\\Controllers\\DetectPlateController.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAcwBQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-28T21:31:15.466Z"
+              "WhenOpened": "2026-03-11T11:12:32.628Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Hakan\\source\\repos\\Hakan-Kocaman\\GeniusPark-ParkingLot_Management\\ParkingLot.WPF\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "ParkingLot.WPF\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Hakan\\source\\repos\\Hakan-Kocaman\\GeniusPark-ParkingLot_Management\\ParkingLot.WPF\\MainWindow.xaml.cs",
+              "RelativeToolTip": "ParkingLot.WPF\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAkwNoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-07T14:45:10.226Z"
             }
           ]
         }

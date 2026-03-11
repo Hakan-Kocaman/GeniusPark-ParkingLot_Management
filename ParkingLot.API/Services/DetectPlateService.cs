@@ -28,7 +28,7 @@ namespace ParkingLot.API.Services
             content.Add(streamContent, "file", carImage.FileName);
 
             var response = await _httpClient.PostAsync(
-                "http://localhost:5000/api/plate/detect",
+                "http://localhost:5001/api/plate/detect",
                 content
             );
 

@@ -20,13 +20,12 @@ namespace ParkingLot.WPF
     /// </summary>
     public partial class LoginWindow : Window
     {
+
         private MainWindow _mainWindow;
-        private HttpClient httpClient;
-        public LoginWindow(MainWindow mainWindow, HttpClient httpClient)
+        public LoginWindow(MainWindow mainWindow)
         {
             InitializeComponent();
             _mainWindow = mainWindow;
-            this.httpClient = httpClient;
         }
 
         private async void Login(object sender, RoutedEventArgs e)
@@ -35,12 +34,13 @@ namespace ParkingLot.WPF
             var password=Password.Text;
             try
             {
-                var response = await this.httpClient.GetFromJsonAsync<User>("api/user/" + username + "/" + password);
+                var response = await _mainWindow.httpClient.GetFromJsonAsync<User>("api/user/" + username + "/" + password);
+
                 if (response != null)
                 {
 
                     _mainWindow.User = response;
-                    _mainWindow.Preload_Data(response.Company_id);
+                    _mainWindow.Preload_Data(_mainWindow.User.Company_id);
                     MessageBox.Show("Login successful!");
                     this.Close();
 
@@ -52,7 +52,7 @@ namespace ParkingLot.WPF
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error: burdan mı çıkıyo la" + ex.Message);
                 if (ex.InnerException != null)
                     MessageBox.Show(ex.InnerException.Message);
             }

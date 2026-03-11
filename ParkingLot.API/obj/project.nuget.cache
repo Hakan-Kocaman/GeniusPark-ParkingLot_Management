@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8HLzF6MwdZ8=",
+  "dgSpecHash": "MUynYJS5DrY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.API\\ParkingLot.API.csproj",
+  "projectFilePath": "C:\\Users\\Hakan\\source\\repos\\Hakan-Kocaman\\GeniusPark-ParkingLot_Management\\ParkingLot.API\\ParkingLot.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hakan\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\Hakan\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",

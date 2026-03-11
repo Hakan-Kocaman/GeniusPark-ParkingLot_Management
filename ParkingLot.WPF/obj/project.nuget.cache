@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uJAJV2ccO9M=",
+  "dgSpecHash": "RIhBOPiEPhs=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.WPF\\ParkingLot.WPF.csproj",
+  "projectFilePath": "C:\\Users\\Hakan\\source\\repos\\Hakan-Kocaman\\GeniusPark-ParkingLot_Management\\ParkingLot.WPF\\ParkingLot.WPF.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hakan\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\Hakan\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",

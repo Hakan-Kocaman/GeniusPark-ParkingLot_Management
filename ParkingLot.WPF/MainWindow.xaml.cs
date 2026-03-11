@@ -31,14 +31,18 @@ namespace ParkingLot.WPF
     public partial class MainWindow : Window
     {
 
-        private HttpClient httpClient;
+        public HttpClient httpClient { get; }
         public User User { get; set; }
 
         private Company _company;
-  
-        private ObservableCollection<Bill> _bills;
+
+        private ObservableCollection<Bill> ActiveBills;
+
+        private ObservableCollection<Bill> InactiveBills;
 
         private ApproveWindow _approveWindow;
+
+        private string Uploaded_filePath;
 
 
 
@@ -46,53 +50,96 @@ namespace ParkingLot.WPF
         {
             InitializeComponent();
 
-             httpClient = new HttpClient
+            httpClient = new HttpClient
             {
                 BaseAddress = new Uri("http://localhost:5000/")
             };
 
-            LoginMenu_Appear(); 
-            _approveWindow=new ApproveWindow();
+            
+            _approveWindow = new ApproveWindow();
+            ActiveBills = new ObservableCollection<Bill>();
+            InactiveBills = new ObservableCollection<Bill>();
 
+            UploadImage_Status.Text = "";
+            CompanyTitle.Text = "";
+            UserTitle.Text = "";
 
-
+            this.Show();
+            LoginMenu_Appear();
         }
 
-        private void LoginMenu_Appear(){
-        var loginMenu = new LoginWindow(this,httpClient);
+        private void LoginMenu_Appear()
+        {
+            var loginMenu = new LoginWindow(this);
             loginMenu.Show();
         }
 
-        
 
-        public async void Preload_Data(int company_id){
 
-                try
+        public async void Preload_Data(int company_id)
+        {
+
+            try
+            {
+                var preloadData = await httpClient.GetFromJsonAsync<PreloadResponse>("api/preload/" + company_id);
+
+                if (preloadData == null)
                 {
-                    var preloadData = await httpClient.GetFromJsonAsync<PreloadResponse>("api/preload/"+company_id);
-    
-                    if (preloadData != null)
-                    {
-                        _company = preloadData.Company;
-
-                    _bills.Clear(); 
-                        foreach (var bill in preloadData.Bill)
-                        {
-                            _bills.Add(bill);
-                        }
-
-                    MessageBox.Show("Preload data loaded successfully!");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Failed to load preload data.");
-                    }
+                    MessageBox.Show("No preload data found for the specified company ID.");
+                    return;
                 }
-                catch (Exception ex)
+
+                if (preloadData != null)
                 {
-                    MessageBox.Show("Error: " + ex.Message);
-                    if (ex.InnerException != null)
-                        MessageBox.Show(ex.InnerException.Message);
+                    _company = preloadData.Company;
+
+                    ActiveBills.Clear();
+                    InactiveBills.Clear();
+                    foreach (var bill in preloadData.Bill)
+                    {
+                        if (bill.ExitDate == null)
+                        {
+                            ActiveBills.Insert(0, bill);
+                        }
+                        else
+                        {
+                            InactiveBills.Insert(0, bill);
+                        }
+                    }
+
+                    UserTitle.Text = "Welcome, " + User.Name;
+                    CompanyTitle.Text = _company.Name;
+                    ImageSubmitButton.IsEnabled = true;
+                    UploadImageButton.IsEnabled = true;
+                    TextSubmitButton.IsEnabled = true;
+
+                    ActiveBills_Dg.Columns.Add(new DataGridTextColumn { Header = "#", Binding = new Binding("Id") });
+                    ActiveBills_Dg.Columns.Add(new DataGridTextColumn { Header = "License Plate", Binding = new Binding("LicensePlate") });
+                    ActiveBills_Dg.Columns.Add(new DataGridTextColumn { Header = "Enter Date", Binding = new Binding("EnterDate") });
+                    ActiveBills_Dg.ItemsSource = ActiveBills;
+
+                    InActiveBills_Dg.Columns.Add(new DataGridTextColumn { Header = "#", Binding = new Binding("Id") });
+                    InActiveBills_Dg.Columns.Add(new DataGridTextColumn { Header = "License Plate", Binding = new Binding("LicensePlate") });
+                    InActiveBills_Dg.Columns.Add(new DataGridTextColumn { Header = "Price", Binding = new Binding("Price") });
+                    InActiveBills_Dg.Columns.Add(new DataGridTextColumn { Header = "Exit Date", Binding = new Binding("ExitDate") });
+                    InActiveBills_Dg.Columns.Add(new DataGridTextColumn { Header = "Enter Date", Binding = new Binding("EnterDate") });
+
+
+                    InActiveBills_Dg.ItemsSource = InactiveBills;
+
+
+                    LastChange.Text = ("Preload data loaded successfully!");
+                }
+                else
+                {
+                    MessageBox.Show("Failed to load preload data.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                if (ex.InnerException != null)
+                    MessageBox.Show(ex.InnerException.Message);
             }
 
         }
@@ -106,9 +153,62 @@ namespace ParkingLot.WPF
             if (openFileDialog.ShowDialog() != true)
             { return; }
 
+            Uploaded_filePath = openFileDialog.FileName;
+            UploadImage_Status.Text = "File: " + System.IO.Path.GetFileName(openFileDialog.FileName) + " uploaded";
 
-                var filePath = openFileDialog.FileName;
-                var file = CreateFormFile(filePath);
+        }
+
+        private async void PostOrUpdateBill(string detectedPlate)
+        {
+            Bill bill = new Bill
+            {
+                LicensePlate = detectedPlate,
+                Company_id = _company.Id,
+                User_id = User.Id,
+            };
+
+            var response = await httpClient.PostAsJsonAsync("api/bill/", bill);
+
+            response.EnsureSuccessStatusCode();
+
+            var result = await response.Content.ReadFromJsonAsync<Bill>();
+            if (result != null)
+            {
+                var existingBill = ActiveBills.FirstOrDefault(b => b.Id == result.Id);
+                if (existingBill != null)
+                {
+                    InactiveBills.Insert(0, result);
+                    ActiveBills.Remove(existingBill);
+                    var timeSpent = (result.ExitDate - result.EnterDate)?.TotalMinutes;
+                    var hour = (int)(timeSpent / 60);
+                    var minute = (int)(timeSpent % 60);
+                    LastChange.Text = ("Vehicle " + result.LicensePlate + " exited.");
+                    MessageBox.Show("Vehicle  '" + result.LicensePlate + "'  exited.\nTime spent: " + hour + " hour, " + minute + " minutes \nPrice: " + result.Price + "");
+                }
+                else
+                {
+                    ActiveBills.Insert(0, result);
+                    LastChange.Text = ("New vehicle " + result.LicensePlate + " entered.");
+                }
+
+
+            }
+            else
+            {
+                MessageBox.Show("Failed to update bill.");
+            }
+
+        }
+        private IFormFile CreateFormFile(string filePath)
+        {
+            var stream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+            return new FormFile(stream, 0, stream.Length, "image", System.IO.Path.GetFileName(filePath));
+        }
+
+        private async void Submit_Image(object sender, RoutedEventArgs e)
+        {
+            var filePath = Uploaded_filePath;
+            var file = CreateFormFile(filePath);
 
             try
             {
@@ -123,10 +223,14 @@ namespace ParkingLot.WPF
 
                 var result = await response.Content.ReadFromJsonAsync<PlateResponse>();
 
-                if (result.Confidence >= 0.9) {  
+                UploadImage_Status.Text = "";
+
+                if (result.Confidence >= 0.9)
+                {
                     PostOrUpdateBill(result.Plate);
-                    
-                    MessageBox.Show("Plate:" + result.Plate + " detected"); }
+
+                    MessageBox.Show("Plate:" + result.Plate + " detected");
+                }
                 else if (result.Confidence >= 0.6)
                 {
                     _approveWindow.DetectedPlate = result.Plate;
@@ -134,71 +238,42 @@ namespace ParkingLot.WPF
                     _approveWindow.Reload();
                     _approveWindow.Show();
 
-                    
-
                     if (_approveWindow.ApproveStatus)
                     {
-                       PostOrUpdateBill(result.Plate);
+                        PostOrUpdateBill(result.Plate);
                     }
                     else
                     {
                         return;
                     }
-
-
                 }
                 else { MessageBox.Show("Plate Could Not Detect"); }
-                   
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message);
-                    if (ex.InnerException != null)
-                        MessageBox.Show(ex.InnerException.Message);
-                }
 
-        }
-
-        private async void PostOrUpdateBill(string detectedPlate) {
-            Bill bill = new Bill
+            }
+            catch (Exception ex)
             {
-                LicensePlate = detectedPlate,
-                Company_id = _company.Id,
-                User_id= User.Id,
-            };
-
-            var response = await httpClient.PostAsJsonAsync("api/bill/postorupdate", bill);
-
-            response.EnsureSuccessStatusCode();
-
-            var result = await response.Content.ReadFromJsonAsync<Bill>();
-                if (result != null)
-                {
-                    var existingBill = _bills.FirstOrDefault(b => b.Id == result.Id);
-                    if (existingBill != null)
-                    {
-                        int index = _bills.IndexOf(existingBill);
-                        _bills[index] = result; 
-                    }
-                    else
-                    {
-                        _bills.Add(result); 
-                    }
-    
-                    MessageBox.Show("Bill updated successfully!");
-                }
-                else
-                {
-                    MessageBox.Show("Failed to update bill.");
+                MessageBox.Show("Error: " + ex.Message);
+                if (ex.InnerException != null)
+                    MessageBox.Show(ex.InnerException.Message);
             }
 
         }
-        private IFormFile CreateFormFile(string filePath)
+
+        private async void Submit_inputPlate(object sender, RoutedEventArgs e)
         {
-            var stream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
-            return new FormFile(stream, 0, stream.Length, "image", System.IO.Path.GetFileName(filePath));
+            var InputPlate = inputPlate.Text;
+
+            if (InputPlate == "")
+                return;
+
+            PostOrUpdateBill(InputPlate);
         }
 
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            httpClient.Dispose();
+            Application.Current.Shutdown();
+        }
 
     }
 }

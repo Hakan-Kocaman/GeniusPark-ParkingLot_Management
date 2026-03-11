@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9OIogfY2KqI=",
+  "dgSpecHash": "wb3ZjRqN/vE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.Data\\ParkingLot.Data.csproj",
+  "projectFilePath": "C:\\Users\\Hakan\\source\\repos\\Hakan-Kocaman\\GeniusPark-ParkingLot_Management\\ParkingLot.Data\\ParkingLot.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hakan\\.nuget\\packages\\microsoft.entityframeworkcore\\10.0.3\\microsoft.entityframeworkcore.10.0.3.nupkg.sha512",
     "C:\\Users\\Hakan\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\10.0.3\\microsoft.entityframeworkcore.abstractions.10.0.3.nupkg.sha512",

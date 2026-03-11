@@ -1597,11 +1597,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.WPF\\ParkingLot.WPF.csproj",
+      "projectUniqueName": "C:\\Users\\Hakan\\source\\repos\\Hakan-Kocaman\\GeniusPark-ParkingLot_Management\\ParkingLot.WPF\\ParkingLot.WPF.csproj",
       "projectName": "ParkingLot.WPF",
-      "projectPath": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.WPF\\ParkingLot.WPF.csproj",
+      "projectPath": "C:\\Users\\Hakan\\source\\repos\\Hakan-Kocaman\\GeniusPark-ParkingLot_Management\\ParkingLot.WPF\\ParkingLot.WPF.csproj",
       "packagesPath": "C:\\Users\\Hakan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.WPF\\obj\\",
+      "outputPath": "C:\\Users\\Hakan\\source\\repos\\Hakan-Kocaman\\GeniusPark-ParkingLot_Management\\ParkingLot.WPF\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1622,14 +1622,14 @@
         "net10.0-windows7.0": {
           "targetAlias": "net10.0-windows",
           "projectReferences": {
-            "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.API\\ParkingLot.API.csproj": {
-              "projectPath": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.API\\ParkingLot.API.csproj"
+            "C:\\Users\\Hakan\\source\\repos\\Hakan-Kocaman\\GeniusPark-ParkingLot_Management\\ParkingLot.API\\ParkingLot.API.csproj": {
+              "projectPath": "C:\\Users\\Hakan\\source\\repos\\Hakan-Kocaman\\GeniusPark-ParkingLot_Management\\ParkingLot.API\\ParkingLot.API.csproj"
             },
-            "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.Core\\ParkingLot.Core.csproj": {
-              "projectPath": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.Core\\ParkingLot.Core.csproj"
+            "C:\\Users\\Hakan\\source\\repos\\Hakan-Kocaman\\GeniusPark-ParkingLot_Management\\ParkingLot.Core\\ParkingLot.Core.csproj": {
+              "projectPath": "C:\\Users\\Hakan\\source\\repos\\Hakan-Kocaman\\GeniusPark-ParkingLot_Management\\ParkingLot.Core\\ParkingLot.Core.csproj"
             },
-            "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.Data\\ParkingLot.Data.csproj": {
-              "projectPath": "C:\\Users\\Hakan\\source\\repos\\ParkingLot_Management\\ParkingLot.Data\\ParkingLot.Data.csproj"
+            "C:\\Users\\Hakan\\source\\repos\\Hakan-Kocaman\\GeniusPark-ParkingLot_Management\\ParkingLot.Data\\ParkingLot.Data.csproj": {
+              "projectPath": "C:\\Users\\Hakan\\source\\repos\\Hakan-Kocaman\\GeniusPark-ParkingLot_Management\\ParkingLot.Data\\ParkingLot.Data.csproj"
             }
           }
         }
@@ -1644,7 +1644,7 @@
         "auditLevel": "low",
         "auditMode": "all"
       },
-      "SdkAnalysisLevel": "10.0.100"
+      "SdkAnalysisLevel": "10.0.200"
     },
     "frameworks": {
       "net10.0-windows7.0": {
@@ -1668,7 +1668,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",
