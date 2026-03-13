@@ -26,6 +26,10 @@ namespace ParkingLot.Data
         public int? Pricing_id { get; set; }
                 [Column("Users_id")]
         public int User_id { get; set; }
+        [Column("Subscription_id")]
+        public int? Subscription_id { get; set; }
+        [Column("Parkinglot_id")]
+        public int Parkinglot_id { get; set; }
 
 
     }

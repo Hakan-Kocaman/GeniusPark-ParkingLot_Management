@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ParkingLot.API.Services;
+using ParkingLot.Core;
 using ParkingLot.Data;
 
 namespace ParkingLot.API.Controllers

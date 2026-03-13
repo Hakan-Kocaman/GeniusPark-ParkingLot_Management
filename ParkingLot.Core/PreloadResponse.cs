@@ -8,6 +8,7 @@ namespace ParkingLot.Core
     public class PreloadResponse
     {
         public Company Company { get; set; }
+        public List<Parkinglot> Parkinglots { get; set; }
         public List<Bill> Bill { get; set; }
 
     }

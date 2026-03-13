@@ -1,4 +1,5 @@
-﻿using ParkingLot.Data;
+﻿using MahApps.Metro.Controls;
+using ParkingLot.Data;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -18,7 +19,7 @@ namespace ParkingLot.WPF
     /// <summary>
     /// LoginWindow.xaml etkileşim mantığı
     /// </summary>
-    public partial class LoginWindow : Window
+    public partial class LoginWindow : MetroWindow
     {
 
         private MainWindow _mainWindow;

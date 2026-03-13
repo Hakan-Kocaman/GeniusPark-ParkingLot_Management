@@ -1,5 +1,6 @@
 using ParkingLot.Data;
 using Microsoft.EntityFrameworkCore;
+using ParkingLot.Core;
 
 namespace ParkingLot.API.Services
 {
@@ -17,10 +18,18 @@ namespace ParkingLot.API.Services
         }
         public async Task<Bill> PostBill(Bill bill)
         {
+            
             try {
-                var bills = await _context.Bills.FirstOrDefaultAsync(b => (b.LicensePlate == bill.LicensePlate) && (b.ExitDate==null));
+                var bills = await _context.Bills.FirstOrDefaultAsync(b => (b.LicensePlate == bill.LicensePlate) && (b.ExitDate == null));
                 if (bills == null)
                 {
+                    var subscriptedVehicles = await _context.SubscriptedVehicles.FirstOrDefaultAsync(sv=> sv.LicensePlate==bill.LicensePlate);
+
+                    if (subscriptedVehicles != null)
+                    {
+                        bill.Subscription_id = subscriptedVehicles.Subscription_id;
+                    }
+
                     bill.EnterDate = DateTime.Now;
                     bill.ExitDate = null;
                     bill.Price = null;
@@ -65,7 +74,19 @@ namespace ParkingLot.API.Services
 
                         if (pricing != null)
                         {
-                            bills.Price = pricing.PriceOfInterval;
+                            Decimal coveringDiscount;
+                                
+                                var subscriptedVehicle = await _context.SubscriptedVehicles.FirstOrDefaultAsync(sv => sv.Subscription_id == bills.Subscription_id && DateTime.Now < sv.EndDate && DateTime.Now > sv.StartDate);
+                            if (subscriptedVehicle == null) { 
+                                coveringDiscount = 0;
+                            }
+                            else { 
+                                var subscription = await _context.Subscriptions.FirstOrDefaultAsync(s => s.Id == subscriptedVehicle.Subscription_id);
+                                if (subscription == null) { coveringDiscount = 0; }
+                                else
+                                    coveringDiscount = subscription.CoveringPercentage;
+                            }                                                                               
+                            bills.Price = pricing.PriceOfInterval - pricing.PriceOfInterval*coveringDiscount;
                             bills.Pricing_id = pricing.Id;
                         }
                     }

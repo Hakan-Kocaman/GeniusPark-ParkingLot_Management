@@ -1,66 +1,200 @@
-﻿<Window x:Class="ParkingLot.WPF.MainWindow"
+﻿<Controls:MetroWindow x:Class="ParkingLot.WPF.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:local="clr-namespace:ParkingLot.WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
-    <Grid>
-        
+        Title="ParkingLot"
+        Height="600"
+        Width="1100"
+        WindowStartupLocation="CenterScreen"
+        GlowBrush="MediumPurple"
+        BorderBrush="MediumPurple"
+        Closing="Window_Closing">
+
+    <Grid Margin="10">
+
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="4*"/>
-            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
+
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="4*"/>
-            <ColumnDefinition Width="4*"/>
-            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
- 
-        <Border Grid.ColumnSpan="3" Grid.Row="0" BorderThickness="1" BorderBrush="LightSlateGray" Margin="5">
+
+        <!-- HEADER -->
+        <Border Grid.ColumnSpan="3"
+                Grid.Row="0"
+                BorderThickness="1"
+                BorderBrush="MediumPurple"
+                Padding="10"
+                Margin="5">
+
             <Grid>
+
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <TextBlock  x:Name="CompanyTitle" Grid.Column="0" Text="Company" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <TextBlock  x:Name="UserTitle"  Grid.Column="2"  Text="User" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                <TextBlock
+                    x:Name="CompanyTitle"
+                    Grid.Column="0"
+                    Text="Company"
+                    FontSize="28"
+                    FontWeight="Bold"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"/>
+
+                <ComboBox x:Name="ParkingLotSelecter"
+                    Grid.Column="1"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    SelectionChanged="parkinglotChanged"/>
+
+                <TextBlock
+                    x:Name="UserTitle"
+                    Grid.Column="2"
+                    Text="User"
+                    FontSize="28"
+                    FontWeight="Bold"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"/>
+
             </Grid>
-        </Border>
-        <TextBlock x:Name="LastChange"     Grid.Row="2" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Right" Text="Waiting for login..." Margin="10,0,30,5" FontSize="20"/>
 
+        </Border>
 
-        <Border Grid.Column="2" Grid.Row="1" BorderThickness="1" BorderBrush="LightSlateGray" Margin="5">
-            <DataGrid x:Name="ActiveBills_Dg" Margin="5" IsReadOnly="True" AutoGenerateColumns="False" VerticalGridLinesBrush="Green" HorizontalGridLinesBrush="Green"/>
-        </Border>
-        <Border Grid.Column="0" Grid.Row="1" BorderThickness="1" BorderBrush="LightSlateGray" Margin="5">
-            <DataGrid x:Name="InActiveBills_Dg" Margin="5" IsReadOnly="True" AutoGenerateColumns="False" VerticalGridLinesBrush="Red" HorizontalGridLinesBrush="Red"/>
-        </Border>
-        
-        <Border Grid.Column="1" Grid.Row="1" BorderThickness="1" BorderBrush="LightSlateGray" Margin="5">
-            <Grid>
+        <!-- INACTIVE BILLS -->
+        <GroupBox Header="Inactive Bills"
+                  Grid.Row="1"
+                  Grid.Column="0"
+                  Margin="5"
+                 
+                  >
+                  
+
+            <DataGrid
+                x:Name="InActiveBills_Dg"
+                Margin="5"
+                IsReadOnly="True"
+                AutoGenerateColumns="False"
+                Style="{DynamicResource MahApps.Styles.DataGrid}"
+                 Foreground="Red"/>
+
+        </GroupBox>
+
+        <!-- CONTROLS PANEL -->
+        <GroupBox Header="Vehicle Control"
+                  Grid.Row="1"
+                  Grid.Column="1"
+                  Margin="5">
+
+            <Grid Margin="10">
+
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="3*"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="2*"/>
-                    <RowDefinition Height="0.5*"/>
-                    <RowDefinition Height="3*"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <Button x:Name="UploadImageButton"  Content="Upload Image" Margin="5" Click="Load_Image" IsEnabled="False"/>
-                <TextBlock  x:Name="UploadImage_Status" Grid.Row="1" Text="Upload Status" Margin="5"/>
-                <Button x:Name="ImageSubmitButton"    Grid.Row="2" Content="Submit" Margin="5" Click="Submit_Image" IsEnabled="False"/>
-                <TextBox  x:Name="inputPlate"       Grid.Row="4" Margin="5" />
-                <TextBlock Grid.Row="5" Text="Text Status" Margin="5"/>
-                <Button x:Name="TextSubmitButton" Grid.Row="6" Content="Submit" Margin="5" Click="Submit_inputPlate" IsEnabled="False"/>
-                
 
+                <!-- IMAGE BUTTON -->
+                <Button
+                    x:Name="UploadImageButton"
+                    Content="Upload Image"
+                    Height="35"
+                    Margin="5"
+                    Click="Load_Image"
+                    IsEnabled="False"/>
+
+                <TextBlock
+                    x:Name="UploadImage_Status"
+                    Grid.Row="1"
+                    Text="Upload Status"
+                    Margin="5"
+                    FontSize="14"/>
+
+                <Button
+                    x:Name="ImageSubmitButton"
+                    Grid.Row="2"
+                    Content="Submit Image"
+                    Height="35"
+                    Margin="5"
+                    Click="Submit_Image"
+                    IsEnabled="False"/>
+
+                <!-- TEXT INPUT -->
+
+                <TextBox
+                    x:Name="inputPlate"
+                    Grid.Row="5"
+                    Height="35"
+                    Margin="5"
+                    Controls:TextBoxHelper.Watermark="Plate Number"/>
+
+                <TextBlock
+                    Grid.Row="4"
+                    Text="Manual Entry"
+                    Margin="5"
+                    FontSize="14"/>
+
+                <Button
+                    x:Name="TextSubmitButton"
+                    Grid.Row="6"
+                    Content="Submit Plate"
+                    Height="35"
+                    Margin="5"
+                    Click="Submit_inputPlate"
+                    IsEnabled="False"/>
 
             </Grid>
+
+        </GroupBox>
+
+        <!-- ACTIVE BILLS -->
+        <GroupBox Header="Active Bills"
+                  Grid.Row="1"
+                  Grid.Column="2"
+                  Margin="5">
+
+            <DataGrid
+                
+                x:Name="ActiveBills_Dg"
+                Margin="5"
+                IsReadOnly="True"
+                AutoGenerateColumns="False"
+                Style="{DynamicResource MahApps.Styles.DataGrid}"
+                Foreground="LightGreen"
+                />
+
+        </GroupBox>
+
+        <!-- STATUS BAR -->
+        <Border Grid.Row="2"
+                Grid.ColumnSpan="3"
+                BorderThickness="1"
+                BorderBrush="MediumPurple"
+                Padding="5"
+                Margin="5">
+
+            <TextBlock
+                x:Name="LastChange"
+                Text="Waiting for login..."
+                FontSize="16"
+                HorizontalAlignment="Right"/>
+
         </Border>
+
     </Grid>
-</Window>
+</Controls:MetroWindow>

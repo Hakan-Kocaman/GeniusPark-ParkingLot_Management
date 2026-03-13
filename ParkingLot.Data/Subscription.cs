@@ -1,25 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text;
 
 namespace ParkingLot.Data
 {
-    [Table("Users")]
-    public class User
+    [Table("Subscription")]
+    public class Subscription
     {
         [Key]
-        [Column("Users_id")]
+        [Column("Subscription_id")]
         public int Id { get; set; }
-        [Column("Users_name")]
-        public string Name { get; set; }
-        [Column("Users_password")]
-        public string Password { get; set; }
-        [Column("Roles_id")]
-        public int Role_id { get; set; }
+        [Column("Subscription_duration")]
+        public int Duration { get; set; }
+        [Column("Subscription_coveringPercentage")]
+        public decimal CoveringPercentage { get; set; }
         [Column("Company_id")]
         public int Company_id { get; set; }
-
     }
 }

@@ -1,25 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text;
 
 namespace ParkingLot.Data
 {
-    [Table("Users")]
-    public class User
+    [Table("Parkinglot")]
+    public class Parkinglot
     {
         [Key]
-        [Column("Users_id")]
+        [Column("Parkinglot_id")]
         public int Id { get; set; }
-        [Column("Users_name")]
+        [Column("Parkinglot_name")]
         public string Name { get; set; }
-        [Column("Users_password")]
-        public string Password { get; set; }
-        [Column("Roles_id")]
-        public int Role_id { get; set; }
         [Column("Company_id")]
         public int Company_id { get; set; }
-
     }
 }

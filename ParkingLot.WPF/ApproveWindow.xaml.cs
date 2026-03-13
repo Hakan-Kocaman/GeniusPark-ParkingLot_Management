@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MahApps.Metro.Controls;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -15,7 +16,7 @@ namespace ParkingLot.WPF
     /// <summary>
     /// ApproveWindow.xaml etkileşim mantığı
     /// </summary>
-    public partial class ApproveWindow : Window
+    public partial class ApproveWindow : MetroWindow
     {
 
         public string DetectedPlate { get; set; }

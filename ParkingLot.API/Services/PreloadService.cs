@@ -21,13 +21,15 @@ namespace ParkingLot.API.Services
             if (company == null) {
                 throw new Exception("No company found in the database.");
             }
-            
+
+            var parkinglots = await _context.Parkinglots.Where(p => p.Company_id == company_id).ToListAsync();
 
             var bills = await _context.Bills.Where(b => b.Company_id == company_id).ToListAsync();
 
             var _preloadResponse = new PreloadResponse
             {
                 Company = company,
+                Parkinglots = parkinglots,
                 Bill   = bills
             };
 

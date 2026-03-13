@@ -9,6 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MahApps.Metro" Version="2.4.11" />
+    <PackageReference Include="MahApps.Metro.IconPacks" Version="6.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ParkingLot.API\ParkingLot.API.csproj" />
     <ProjectReference Include="..\ParkingLot.Core\ParkingLot.Core.csproj" />
     <ProjectReference Include="..\ParkingLot.Data\ParkingLot.Data.csproj" />
