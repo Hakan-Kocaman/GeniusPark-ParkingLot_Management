@@ -39,10 +39,8 @@ namespace ParkingLot.WPF
 
         private List<Parkinglot> _parkinglots;
 
-        private List<Bill> _allBills;
-
-        private ObservableCollection<(Bill bill,Parkinglot parkinglot)> ActiveBills;
-        private ObservableCollection<(Bill bill, Parkinglot parkinglot)> InactiveBills;
+        private ObservableCollection<Bill> ActiveBills;
+        private ObservableCollection<Bill> InactiveBills;
 
         private ApproveWindow _approveWindow;
 
@@ -60,10 +58,11 @@ namespace ParkingLot.WPF
             {
                 BaseAddress = new Uri("http://localhost:5000/")
             };
-            ActiveBills = new ObservableCollection<(Bill bill, Parkinglot parkinglot)>();
-            InactiveBills = new ObservableCollection<(Bill bill, Parkinglot parkinglot)>();
+            ActiveBills = new ObservableCollection<Bill>();
+            InactiveBills = new ObservableCollection<Bill>();
 
             _approveWindow = new ApproveWindow();
+            _parkinglots = new List<Parkinglot>();
 
             UploadImage_Status.Text = "";
             CompanyTitle.Text = "";
@@ -98,31 +97,33 @@ namespace ParkingLot.WPF
                 {
                     _company = preloadData.Company;
                     _parkinglots = preloadData.Parkinglots;
-                    _allBills = preloadData.Bill;
                     _selectedParkingLot = _parkinglots.FirstOrDefault();
+                    
 
-                    foreach (var bill in _allBills)
+                    foreach (var bill in preloadData.Bill)
                     {
                         if (bill.Parkinglot_id == _selectedParkingLot.Id)
                         {
                             if (bill.ExitDate == null)
                             {
-                                ActiveBills.Insert(0, (bill, _selectedParkingLot));
+                                ActiveBills.Insert(0, (bill));
                             }
                             else
                             {
-                                InactiveBills.Insert(0, (bill, _selectedParkingLot));
+                                InactiveBills.Insert(0, (bill));
                             }
                         }
                     }
 
 
 
+
                     UserTitle.Text = "Welcome, " + User.Name;
                     CompanyTitle.Text = _company.Name;
-                    ParkingLotSelecter.ItemsSource = _parkinglots;
-                    ParkingLotSelecter.SelectedItem = _selectedParkingLot;
+
                     ParkingLotSelecter.DisplayMemberPath = "Name";
+                    ParkingLotSelecter.ItemsSource = preloadData.Parkinglots; // hatalı satır
+                    ParkingLotSelecter.SelectedItem = _selectedParkingLot;
                     
                     ImageSubmitButton.IsEnabled = true;
                     UploadImageButton.IsEnabled = true;
@@ -131,7 +132,7 @@ namespace ParkingLot.WPF
                     ActiveBills_Dg.Columns.Add(new DataGridTextColumn { Header = "#", Binding = new Binding("Id") });
                     ActiveBills_Dg.Columns.Add(new DataGridTextColumn { Header = "License Plate", Binding = new Binding("LicensePlate") });
                     ActiveBills_Dg.Columns.Add(new DataGridTextColumn { Header = "Enter Date", Binding = new Binding("EnterDate") });
-                    ActiveBills_Dg.ItemsSource = ActiveBills.Select(x=>x.bill).ToList();
+                    ActiveBills_Dg.ItemsSource = ActiveBills;
 
                     InActiveBills_Dg.Columns.Add(new DataGridTextColumn { Header = "#", Binding = new Binding("Id") });
                     InActiveBills_Dg.Columns.Add(new DataGridTextColumn { Header = "License Plate", Binding = new Binding("LicensePlate") });
@@ -140,7 +141,7 @@ namespace ParkingLot.WPF
                     InActiveBills_Dg.Columns.Add(new DataGridTextColumn { Header = "Enter Date", Binding = new Binding("EnterDate") });
 
                     
-                    InActiveBills_Dg.ItemsSource = InactiveBills.Select(x => x.bill).ToList();
+                    InActiveBills_Dg.ItemsSource = InactiveBills;
 
 
                     LastChange.Text = ("Preload data loaded successfully!");
@@ -183,20 +184,27 @@ namespace ParkingLot.WPF
                 Parkinglot_id = _selectedParkingLot.Id,
             };
 
+            BillRequest billRequest = new BillRequest
+            {
+                Parkinglot_id = _selectedParkingLot.Id,
+                Bill = bill,
+            };
 
-            var response = await httpClient.PostAsJsonAsync("api/bill/", bill);
+
+            var response = await httpClient.PostAsJsonAsync("api/bill/", billRequest);
 
             response.EnsureSuccessStatusCode();
 
             var result = await response.Content.ReadFromJsonAsync<Bill>();
             if (result != null)
             {
-                _allBills.Add(result);
-                var existingBill = ActiveBills.FirstOrDefault(b => b.bill.LicensePlate == result.LicensePlate).bill;
+                var existingBill = ActiveBills.FirstOrDefault(b => b.LicensePlate == result.LicensePlate);
                 if (existingBill != null)
                 {
-                    InactiveBills.Insert(0, (existingBill, _selectedParkingLot));
-                    ActiveBills.Remove((existingBill, _selectedParkingLot));
+                    existingBill.Price = result.Price;
+                    existingBill.ExitDate = result.ExitDate;
+                    InactiveBills.Insert(0, (existingBill));
+                    ActiveBills.Remove((existingBill));
                     var timeSpent = (result.ExitDate - result.EnterDate)?.TotalMinutes;
                     var hour = (int)(timeSpent / 60);
                     var minute = (int)(timeSpent % 60);
@@ -206,7 +214,7 @@ namespace ParkingLot.WPF
                 else
                 {
                     
-                    ActiveBills.Insert(0, (result, _selectedParkingLot));
+                    ActiveBills.Insert(0, (result));
                     LastChange.Text = ("New vehicle " + result.LicensePlate + " entered.");
                 }
 
@@ -301,23 +309,27 @@ namespace ParkingLot.WPF
             Application.Current.Shutdown();
         }
 
-        private void parkinglotChanged(object sender, SelectionChangedEventArgs e)
+        private async void parkinglotChanged(object sender, SelectionChangedEventArgs e)
         {
             _selectedParkingLot = (Parkinglot)ParkingLotSelecter.SelectedItem;
-            foreach (var bill in _allBills)
+            ActiveBills.Clear();
+            InactiveBills.Clear();
+            var filteredBills = await httpClient.GetFromJsonAsync<List<Bill>>("api/bill/"+_company.Id+"/"+_selectedParkingLot.Id+"/");
+            foreach (var bill in filteredBills)
             {
                 if (bill.Parkinglot_id == _selectedParkingLot.Id)
                 {
                     if (bill.ExitDate == null)
                     {
-                        ActiveBills.Insert(0, (bill, _selectedParkingLot));
+                        ActiveBills.Insert(0, (bill));
                     }
                     else
                     {
-                        InactiveBills.Insert(0, (bill, _selectedParkingLot));
+                        InactiveBills.Insert(0, (bill));
                     }
                 }
             }
         }
+
     }
 }

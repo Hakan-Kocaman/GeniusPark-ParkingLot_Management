@@ -157,4 +157,3 @@ C:\Users\Hakan\source\repos\Hakan-Kocaman\GeniusPark-ParkingLot_Management\Parki
 C:\Users\Hakan\source\repos\Hakan-Kocaman\GeniusPark-ParkingLot_Management\ParkingLot.API\obj\Debug\net10.0\ParkingL.B07595DA.Up2Date
 C:\Users\Hakan\source\repos\Hakan-Kocaman\GeniusPark-ParkingLot_Management\ParkingLot.API\obj\Debug\net10.0\ParkingLot.API.genruntimeconfig.cache
 C:\Users\Hakan\source\repos\Hakan-Kocaman\GeniusPark-ParkingLot_Management\ParkingLot.API\obj\Debug\net10.0\ref\ParkingLot.API.dll
-C:\Users\Hakan\source\repos\Hakan-Kocaman\GeniusPark-ParkingLot_Management\ParkingLot.API\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

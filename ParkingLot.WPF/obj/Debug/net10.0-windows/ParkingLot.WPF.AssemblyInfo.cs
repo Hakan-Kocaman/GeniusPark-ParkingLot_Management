@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ParkingLot.WPF")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3299951f332fdbebaa3237fab8413f2bf55af52e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+410beabb231411d52d5f4420ce11b2a126c85450")]
 [assembly: System.Reflection.AssemblyProductAttribute("ParkingLot.WPF")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ParkingLot.WPF")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
