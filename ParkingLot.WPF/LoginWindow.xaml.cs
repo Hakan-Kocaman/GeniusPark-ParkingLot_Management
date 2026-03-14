@@ -35,7 +35,7 @@ namespace ParkingLot.WPF
             var password=Password.Text;
             try
             {
-                var response = await _mainWindow.httpClient.GetFromJsonAsync<User>("api/user/" + username + "/" + password +"/");
+                var response = await _mainWindow.httpClient.GetFromJsonAsync<User>("api/user/" + username + "/" + password);
 
                 if (response != null)
                 {
@@ -55,7 +55,7 @@ namespace ParkingLot.WPF
             {
                 MessageBox.Show("Error: burdan mı çıkıyo la" + ex.Message);
                 if (ex.InnerException != null)
-                    MessageBox.Show(ex.InnerException.Message+ex.Source);
+                    MessageBox.Show(ex.InnerException.Message);
             }
         }
 

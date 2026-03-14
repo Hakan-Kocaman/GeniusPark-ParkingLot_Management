@@ -16,19 +16,11 @@ namespace ParkingLot.API.Services
         {
             return date.DayOfWeek == DayOfWeek.Saturday || date.DayOfWeek == DayOfWeek.Sunday;
         }
-        public async Task<List<Bill>> GetBills(int company_id, int parkinglot_id)
+        public async Task<Bill> PostBill(Bill bill)
         {
+            
             try {
-                return await _context.Bills.Where(b => (b.Company_id == company_id) && (b.Parkinglot_id == parkinglot_id)).ToListAsync();
-            }
-            catch(Exception ex) { throw new Exception(ex.Message); }
-        }
-        public async Task<Bill> PostBill(BillRequest billrequest)
-        {
-            var bill = billrequest.Bill;
-            var parkinglot_id = billrequest.Parkinglot_id;
-            try {
-                var bills = await _context.Bills.FirstOrDefaultAsync(b => (b.LicensePlate == bill.LicensePlate) && (b.ExitDate == null) && (b.Parkinglot_id==parkinglot_id));
+                var bills = await _context.Bills.FirstOrDefaultAsync(b => (b.LicensePlate == bill.LicensePlate) && (b.ExitDate == null));
                 if (bills == null)
                 {
                     var subscriptedVehicles = await _context.SubscriptedVehicles.FirstOrDefaultAsync(sv=> sv.LicensePlate==bill.LicensePlate);
@@ -47,7 +39,6 @@ namespace ParkingLot.API.Services
                 }
                 else
                 {
-                    bills.Parkinglot_id = parkinglot_id;
                     bills.ExitDate = DateTime.Now;
                     var timeSpan = bills.ExitDate.Value - bills.EnterDate;
                     Double hours = (timeSpan.TotalHours);

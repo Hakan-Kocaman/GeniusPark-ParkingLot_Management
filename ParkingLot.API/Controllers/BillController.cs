@@ -19,25 +19,18 @@ namespace ParkingLot.API.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> PostBill(BillRequest billrequest)
+        public async Task<IActionResult> PostBill(Bill bill)
         {
-            if (billrequest == null)
+            if (bill == null)
             {
                 return BadRequest("Bill data is required.");
             }
 
-            var result = await _postBillService.PostBill(billrequest);
-
-
+            var result = await _postBillService.PostBill(bill);
+         
+            
             return Ok(result);
         }
 
-        [HttpGet("{company_id}/{parkinglot_id}")]
-        public async Task<IActionResult> GetBills(int company_id, int parkinglot_id)
-        {
-            var bills = await _postBillService.GetBills(company_id, parkinglot_id);
-            return Ok(bills);
-
-        }
     }
 }
