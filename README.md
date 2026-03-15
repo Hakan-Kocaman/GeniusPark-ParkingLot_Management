@@ -105,13 +105,13 @@ All components communicate with each other using REST APIs, while the backend AP
 
 ## 📸 Screenshots
 
-### Login Screen
+### 🏢 Login Screen
 ![Login](Screenshots/LoginMenu.jpeg)
 
-### Parkinglot 1 Screen
+### 🏢 Parkinglot 1 Screen
 ![Main](Screenshots/InsideCentralParkinglot.jpeg)
 
-### Parkinglot 2 Screen
+### 🏢 Parkinglot 2 Screen
 ![Main](Screenshots/OutsideNorthWestParkinglot.jpeg)
 
 ---
