@@ -103,6 +103,30 @@ All components communicate with each other using REST APIs, while the backend AP
 
 ---
 
+## 📸 Screenshots
+
+### Login Screen
+![Login](Screenshots/LoginMenu.jpeg)
+
+### Parkinglot 1 Screen
+![Main](Screenshots/InsideCentralParkinglot.jpeg)
+
+### Parkinglot 2 Screen
+![Main](Screenshots/OutsideNorthWestParkinglot.jpeg)
+
+---
+
+![C#](https://img.shields.io/badge/C%23-.NET-green)
+![Python](https://img.shields.io/badge/Python-FastAPI-blue)
+![SQL Server](https://img.shields.io/badge/Database-SQL%20Server-yellow)
+
+---
+
+## 👤 Author
+
+**Hakan Kocaman**
+
+---
 
 
 
