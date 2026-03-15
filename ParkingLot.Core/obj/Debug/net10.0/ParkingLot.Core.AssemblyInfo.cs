@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ParkingLot.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3299951f332fdbebaa3237fab8413f2bf55af52e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bd1d7a94728907ee7eb2414b9685787797797ae8")]
 [assembly: System.Reflection.AssemblyProductAttribute("ParkingLot.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ParkingLot.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
