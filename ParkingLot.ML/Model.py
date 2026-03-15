@@ -3,29 +3,24 @@ import numpy as np
 import cv2
 import easyocr
 
-# Load the YOLOv8 model
+
 model = YOLO("license_plate_model.pt")
 
 async def Predict(file):
     try:
-        # Read the uploaded image file
         contents = await file.read()
         nparr = np.frombuffer(contents, np.uint8)
         img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
 
-        # Perform object detection
-        results = model(img)
-
-        # Initialize EasyOCR reader
+        results = model()
+        
         reader = easyocr.Reader(['en'])
 
-        # Process the results
         for result in results:
             for box in result.boxes:
                 x1, y1, x2, y2 = map(int, box.xyxy[0])
                 cropped_img = img[y1:y2, x1:x2]
 
-                # Perform OCR on the cropped image
                 ocr_result = reader.readtext(cropped_img)
 
                 if ocr_result:
